@@ -34,7 +34,9 @@ class Api::V1::MenusController < ApplicationController
 
   # DELETE /menus/1
   def destroy
+    @menu = Menu.find(params[:id])
     @menu.destroy
+    render json: @menu
   end
 
   def categories
