@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_27_214345) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_11_205135) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.integer "menu_id", null: false
@@ -22,6 +22,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_27_214345) do
   create_table "menus", force: :cascade do |t|
     t.string "name"
     t.boolean "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "email"
+    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
